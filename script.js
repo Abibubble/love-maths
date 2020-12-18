@@ -22,14 +22,14 @@ function displayAdditionQuestion() {
 
 }
 
-function displayAdditionQuestion() {
+function displaySubtractQuestion() {
     
 }
 
-function displayAdditionQuestion() {
+function displayMultiplyQuestion() {
     
 }
 
-function displayAdditionQuestion() {
+function displayDivideQuestion() {
     
 }
