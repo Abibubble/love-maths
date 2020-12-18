@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function runGame() {
 
+    // Generate two random rumbers between 1 and 25
+    // Math.floor rounds down to the whole number
+    // Math.random generates random numbers
+
+    let num1 = Math.floor(Math.random() * 25) + 1;
+    let num2 = Math.floor(Math.random() * 25) + 1;
 }
 
 function checkAnswer() {
@@ -37,7 +43,7 @@ function incrementWrongAnswer() {
 }
 
 function displayAdditionQuestion() {
-
+    Math.floor(Math.random() * 25) + 1;
 }
 
 function displaySubtractQuestion() {
