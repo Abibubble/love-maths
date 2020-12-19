@@ -43,7 +43,11 @@ function runGame(gameType) {
     } else if (gameType === "multiply") {
         displayMultiplyQuestion(num1, num2);
     } else if (gameType === "division") {
-        displayDivideQuestion(num1, num2);
+        if (num1 % num2 === 0 && num1 !== num2) {
+            displayDivisionQuestion(num1, num2);
+        } else {
+            runGame(gameType);
+        }
     } else {
         alert(`Unknown game type ${gameType}`);
         throw `Unknown game type ${gameType}, aborting!`;
@@ -144,10 +148,21 @@ function displayMultiplyQuestion(operand1, operand2) {
 
 }
 
-function displayDivideQuestion(operand1, operand2) {
+function displayDivisionQuestion(operand1, operand2) {
 
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : 
+    operand2;
+    document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : 
+    operand1;
     document.getElementById("operator").textContent = "/";
 
 }
+
+// BONUS (NOT TESTED):
+// Provide better feedback to the user - we don't want to use alert()
+// Add difficulty levels - Easy, Normal, Difficult - that affect the
+    // complexity of the questions
+// SUPER BONUS (NOT TESTED):
+// Add a countdown timer to the game
+// Add a high-score chart for people who get the most answers right in the
+    // time available (research using local storage)
